@@ -99,9 +99,9 @@ class LinearClassifier(object):
     # TODO:                                                                   #
     # Implement this method. Store the predicted labels in y_pred.            #
     ###########################################################################
-    prob = np.dot(X, self.W)
+    prob_scores = np.dot(X, self.W)
 
-    y_pred = np.argmax(prob, axis = 1)
+    y_pred = np.argmax(prob_scores, axis = 1)
     ###########################################################################
     #                           END OF YOUR CODE                              #
     ###########################################################################
@@ -136,4 +136,3 @@ class Softmax(LinearClassifier):
 
   def loss(self, X_batch, y_batch, reg):
     return softmax_loss_vectorized(self.W, X_batch, y_batch, reg)
-
